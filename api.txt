@@ -1,0 +1,112 @@
+
+# Frontend API Requirements
+
+This file documents the API endpoints required by the frontend application.
+Base URL: http://localhost:5000 (or your backend port)
+
+## 1. Treatments
+
+### GET /api/treatments
+Returns a list of all available medical treatments.
+
+**Response Body:**
+```json
+[
+  {
+    "id": "cardiology",
+    "title": "Cardiology & Heart Surgery",
+    "description": "Advanced cardiac care including bypass surgery, valve replacements, and complex interventions.",
+    "icon": "Heart",
+    "conditions": ["Coronary Artery Disease", "Heart Valve Disease", "Arrhythmia", "Heart Failure"],
+    "procedures": [
+      { "name": "CABG (Bypass Surgery)", "cost_india": "5,000 - 7,000", "cost_us": "100,000+" },
+      { "name": "Heart Valve Replacement", "cost_india": "6,500 - 9,000", "cost_us": "150,000+" },
+      { "name": "Angioplasty", "cost_india": "3,500 - 5,000", "cost_us": "50,000+" }
+    ],
+    "success_rate": "99%",
+    "recovery": "2-4 Weeks"
+  },
+  {
+    "id": "orthopedic",
+    "title": "Orthopedic Surgery",
+    "description": "Joint replacements, spine surgery, and sports medicine by world-renowned surgeons.",
+    "icon": "Activity",
+    "conditions": ["Osteoarthritis", "Spine Disorders", "Sports Injuries", "Fractures"],
+    "procedures": [
+      { "name": "Knee Replacement (Single)", "cost_india": "4,000 - 6,000", "cost_us": "45,000+" },
+      { "name": "Hip Replacement", "cost_india": "5,500 - 7,500", "cost_us": "50,000+" },
+      { "name": "Spine Surgery", "cost_india": "5,000 - 9,000", "cost_us": "60,000+" }
+    ],
+    "success_rate": "98.5%",
+    "recovery": "4-8 Weeks"
+  }
+]
+```
+
+### GET /api/treatments/:id
+Returns detailed information for a specific treatment category.
+**Params:**
+- `id`: Treatment ID (e.g., `cardiology`, `orthopedic`)
+
+**Response Body:**
+Same object structure as a single item from the list above.
+
+---
+
+## 2. Doctors
+
+### GET /api/doctors
+Returns a list of doctors.
+**Query Params:**
+- `search` (optional): Filter by name, speciality, or hospital.
+
+**Response Body:**
+```json
+[
+  {
+    "id": 1,
+    "name": "Dr. Rajesh Kumar",
+    "speciality": "Senior Cardiologist",
+    "qualification": "MBBS, MD, DM (Cardiology), FACC (USA)",
+    "experience": "25+ Years",
+    "hospital": "Apollo Hospitals, Delhi",
+    "image": "/doctors/doc1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Dr. Sarah Sharma",
+    "speciality": "Orthopedic Surgeon",
+    "qualification": "MBBS, MS (Ortho), FRCS (UK)",
+    "experience": "18+ Years",
+    "hospital": "Fortis Healthcare, Mumbai",
+    "image": "/doctors/doc2.jpg"
+  }
+]
+```
+
+---
+
+## 3. Contact / Appointments
+
+### POST /api/contact
+Submits a contact request or appointment booking.
+
+**Request Body:**
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "phone": "+1 (555) 000-0000",
+  "country": "USA",
+  "message": "I need a knee replacement...",
+  "medicalReports": null // or file upload handling info
+}
+```
+
+**Response Body:**
+```json
+{
+  "success": true,
+  "message": "Your request has been submitted successfully."
+}
+```

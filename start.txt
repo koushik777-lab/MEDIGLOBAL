@@ -1,0 +1,3 @@
+To start this application, run the following command:
+
+npm run dev 

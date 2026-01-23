@@ -41,9 +41,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/">
           <a className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-900/10 group-hover:shadow-blue-900/20 transition-all">
-              M
-            </div>
+            <img src="/medi.png" alt="MediGlobal Logo" className="h-20 w-auto object-contain" />
             <div className="flex flex-col">
               <span className="font-bold text-xl text-slate-900 leading-tight tracking-tight">
                 MediGlobal
