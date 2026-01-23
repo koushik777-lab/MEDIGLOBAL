@@ -80,10 +80,10 @@ export function Navbar() {
         {/* CTA Buttons */}
         <div className="hidden lg:flex items-center gap-4">
           <Link href="/contact">
-            <Button variant="ghost" className="gap-2 text-slate-600 font-medium hover:text-primary hover:bg-blue-50">
+            {/* <Button variant="ghost" className="gap-2 text-slate-600 font-medium hover:text-primary hover:bg-blue-50">
               <Phone className="w-4 h-4" />
               <span>+1 (555) 123-4567</span>
-            </Button>
+            </Button> */}
           </Link>
           <Link href="/contact">
             <Button className="rounded-full px-6 bg-primary hover:bg-sky-700 shadow-lg shadow-blue-900/20 transition-all hover:-translate-y-0.5 font-semibold">
