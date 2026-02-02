@@ -17,7 +17,7 @@ export default function Cost() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-       <div className="pt-32 pb-12 bg-slate-50 border-b border-slate-100">
+      <div className="pt-32 pb-12 bg-slate-50 border-b border-slate-100">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold text-slate-900 mb-4">Treatment Cost Comparison</h1>
           <p className="text-slate-600 max-w-2xl mx-auto">
@@ -27,7 +27,7 @@ export default function Cost() {
       </div>
 
       <div className="container mx-auto px-4 py-16">
-        
+
         {/* Cost Table */}
         <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-200 overflow-hidden mb-16">
           <div className="bg-slate-900 text-white p-6 grid grid-cols-4 font-bold text-sm md:text-base">
@@ -40,8 +40,8 @@ export default function Cost() {
             {comparisons.map((item, idx) => (
               <div key={idx} className="p-6 grid grid-cols-4 items-center hover:bg-slate-50 transition-colors">
                 <div className="font-medium text-slate-900 text-sm md:text-base">{item.procedure}</div>
-                <div className="text-right text-slate-500 font-mono text-sm md:text-base">${item.usa.toLocaleString()}</div>
-                <div className="text-right text-primary font-bold font-mono text-sm md:text-base">${item.india.toLocaleString()}</div>
+                <div className="text-right text-slate-500 font-mono text-sm md:text-base">₹{item.usa.toLocaleString()}</div>
+                <div className="text-right text-primary font-bold font-mono text-sm md:text-base">₹{item.india.toLocaleString()}</div>
                 <div className="text-right text-green-600 font-bold bg-green-50 rounded-full py-1 px-3 text-xs md:text-sm inline-block ml-auto w-fit">
                   {item.savings}
                 </div>
@@ -62,14 +62,14 @@ export default function Cost() {
                 <div className="h-8 bg-slate-100 rounded-full overflow-hidden relative flex items-center">
                   {/* USA Bar */}
                   <div className="absolute left-0 top-0 bottom-0 bg-slate-300 w-full rounded-full"></div>
-                  <span className="absolute right-4 text-xs font-bold text-slate-500 z-10">USA: ${item.usa.toLocaleString()}</span>
-                  
+                  <span className="absolute right-4 text-xs font-bold text-slate-500 z-10">USA: ₹{item.usa.toLocaleString()}</span>
+
                   {/* India Bar */}
-                  <div 
+                  <div
                     className="absolute left-0 top-0 bottom-0 bg-primary rounded-full z-20 flex items-center px-3 transition-all duration-1000 ease-out"
                     style={{ width: `${(item.india / item.usa) * 100 + 5}%` }}
                   >
-                     <span className="text-xs font-bold text-white whitespace-nowrap">${item.india.toLocaleString()}</span>
+                    <span className="text-xs font-bold text-white whitespace-nowrap">₹{item.india.toLocaleString()}</span>
                   </div>
                 </div>
               </div>
@@ -90,8 +90,8 @@ export default function Cost() {
               <IncludedItem text="Airport transfers" />
             </ul>
           </div>
-          
-           <div className="bg-white p-8 rounded-2xl border border-slate-200">
+
+          <div className="bg-white p-8 rounded-2xl border border-slate-200">
             <h3 className="text-xl font-bold text-slate-900 mb-6">Why is it so affordable?</h3>
             <p className="text-slate-600 mb-4">
               Lower costs in India are NOT due to lower quality. They are a result of:

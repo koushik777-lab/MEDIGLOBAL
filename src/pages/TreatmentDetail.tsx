@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { treatments } from "@/lib/data";
 import { useRoute, Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Clock, DollarSign, Calendar } from "lucide-react";
+import { CheckCircle2, Clock, IndianRupee, Calendar } from "lucide-react";
 
 export default function TreatmentDetail() {
   const [match, params] = useRoute("/treatments/:type");
@@ -14,7 +14,7 @@ export default function TreatmentDetail() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      
+
       <div className="pt-32 pb-20 bg-slate-900 text-white">
         <div className="container mx-auto px-4">
           <div className="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm font-semibold mb-6 border border-blue-500/30">
@@ -31,7 +31,7 @@ export default function TreatmentDetail() {
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-12">
-            
+
             {/* Procedures Table */}
             <section>
               <h2 className="text-2xl font-bold text-slate-900 mb-6">Procedures & Cost Comparison</h2>
@@ -40,8 +40,8 @@ export default function TreatmentDetail() {
                   <thead className="bg-slate-50 border-b border-slate-200">
                     <tr>
                       <th className="p-4 font-semibold text-slate-900">Procedure</th>
-                      <th className="p-4 font-semibold text-slate-900">Cost in US ($)</th>
-                      <th className="p-4 font-semibold text-primary">Cost in India ($)</th>
+                      <th className="p-4 font-semibold text-slate-900">Cost in US (₹)</th>
+                      <th className="p-4 font-semibold text-primary">Cost in India (₹)</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
@@ -78,24 +78,24 @@ export default function TreatmentDetail() {
                 India is a global leader in {treatment.title.toLowerCase()}, offering cutting-edge technology like Robotic Surgery, CyberKnife, and advanced rehabilitation at a fraction of Western costs.
               </p>
               <div className="grid sm:grid-cols-2 gap-6">
-                 <div className="flex gap-3">
-                   <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm shrink-0">
-                     <Clock className="w-5 h-5" />
-                   </div>
-                   <div>
-                     <div className="font-bold text-slate-900">Recovery Time</div>
-                     <div className="text-sm text-slate-600">{treatment.recovery} typical stay</div>
-                   </div>
-                 </div>
-                 <div className="flex gap-3">
-                   <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm shrink-0">
-                     <CheckCircle2 className="w-5 h-5" />
-                   </div>
-                   <div>
-                     <div className="font-bold text-slate-900">Success Rate</div>
-                     <div className="text-sm text-slate-600">{treatment.success_rate} clinical success</div>
-                   </div>
-                 </div>
+                <div className="flex gap-3">
+                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm shrink-0">
+                    <Clock className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-slate-900">Recovery Time</div>
+                    <div className="text-sm text-slate-600">{treatment.recovery} typical stay</div>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm shrink-0">
+                    <CheckCircle2 className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-slate-900">Success Rate</div>
+                    <div className="text-sm text-slate-600">{treatment.success_rate} clinical success</div>
+                  </div>
+                </div>
               </div>
             </section>
           </div>
@@ -112,14 +112,14 @@ export default function TreatmentDetail() {
                   <Button className="w-full mb-3 bg-primary hover:bg-sky-700">Request Quote</Button>
                 </Link>
                 <Link href="/contact">
-                   <Button variant="outline" className="w-full">Speak to a Doctor</Button>
+                  <Button variant="outline" className="w-full">Speak to a Doctor</Button>
                 </Link>
               </div>
 
               <div className="bg-slate-900 text-white p-6 rounded-2xl">
-                 <h3 className="font-bold mb-2">Need Assistance?</h3>
-                 <p className="text-sm text-slate-400 mb-4">Our international patient team is available 24/7 on WhatsApp.</p>
-                 <Button className="w-full bg-green-600 hover:bg-green-700 text-white border-none">Chat on WhatsApp</Button>
+                <h3 className="font-bold mb-2">Need Assistance?</h3>
+                <p className="text-sm text-slate-400 mb-4">Our international patient team is available 24/7 on WhatsApp.</p>
+                <Button className="w-full bg-green-600 hover:bg-green-700 text-white border-none">Chat on WhatsApp</Button>
               </div>
             </div>
           </div>
